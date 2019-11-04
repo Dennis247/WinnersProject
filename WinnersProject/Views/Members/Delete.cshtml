@@ -1,0 +1,161 @@
+﻿@model WinnersProject.Models.Member
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Member</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bustop)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bustop)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phoneNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phoneNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.occupation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.occupation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.servicePreference)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.servicePreference)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wasInvited)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wasInvited)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cameOnYourOwn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cameOnYourOwn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.whoInvitedYou)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.whoInvitedYou)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phoneNoOfInvitee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phoneNoOfInvitee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.newMemberStaus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.newMemberStaus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prayerRequest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prayerRequest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.officialName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.officialName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.signatureDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.signatureDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.districtName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.districtName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateRegistered)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateRegistered)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
