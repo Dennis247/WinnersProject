@@ -44,7 +44,7 @@
     </html>*@
 
 
-
+@using Microsoft.AspNet.Identity
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,6 +69,9 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="~/AdminTemplate/main/css/master_style.css">
 
+    <!-- Select2 -->
+    <link rel="stylesheet" href="~/AdminTemplate/assets/vendor_components/select2/dist/css/select2.min.css">
+
     <!-- horizontal menu style -->
     <link rel="stylesheet" href="~/AdminTemplate/main/css/horizontal_menu_style.css">
 
@@ -88,15 +91,18 @@
     <div class="wrapper">
         <header class="main-header">
             <div class="inside-header">
+
                 <!-- Logo -->
-                <a href="index.html" class="logo">
+                <a href="@Url.Action("Create","Members")" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
                     <!-- logo for regular state and mobile devices -->
                     <span class="logo-lg">
 
                         <img src="~/AdminTemplate/images/logo/winner-logo.png" alt="logo" class="light-logo" width="50" height="50" />
                         <img src="~/AdminTemplate/images/logo/winner-logo.png" alt="logo" class="dark-logo" width="50" height="50" />
+
                     </span>
+
                 </a>
 
                 <!-- Header Navbar -->
@@ -106,67 +112,71 @@
                         @*<span class="sr-only">Toggle navigation</span>*@
                     </a>
                     <div class="btn-group d-none d-lg-block">
-                       
+
                     </div>
                     <ul class="navbar-nav mr-auto mt-md-0">
-                      
                     </ul>
 
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">
 
-                           
 
-                         
+
+
                             <!-- User Account -->
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="~/AdminTemplate/images/logo/17004.png"  height="100" width="100" class="user-image rounded-circle" alt="User Image">
+                                    <img src="~/AdminTemplate/images/logo/17004.png" height="100" width="100" class="user-image rounded-circle" alt="User Image">
                                 </a>
                                 <ul class="dropdown-menu scale-up">
                                     <!-- User image -->
                                     <li class="user-header">
                                         <img src="~/AdminTemplate/images/logo/17004.png" class="float-left rounded-circle" alt="User Image" height="100" width="100">
-                                   
+
                                         <p>
                                             Juliya Brus
-                                            <small class="mb-5">jb@gmail.com</small>
+                                            <small class="mb-5">@User.Identity.GetUserName()</small>
                                             @*<a href="#" class="btn btn-danger btn-sm btn-rounded">View Profile</a>*@
                                         </p>
                                     </li>
                                     <!-- Menu Body -->
                                     <li class="user-body">
-                                        <div class="row no-gutters">
-                                            @*<div class="col-12 text-left">
-                                                <a href="#"><i class="ion ion-person"></i> My Profile</a>
+                                        <form method="post" action="@Url.Action("LogOff","Account")">
+                                            @Html.AntiForgeryToken()
+                                            <div class="row no-gutters">
+                                                @*<div class="col-12 text-left">
+                                                        <a href="#"><i class="ion ion-person"></i> My Profile</a>
+                                                    </div>
+                                                    <div class="col-12 text-left">
+                                                        <a href="#"><i class="ion ion-email-unread"></i> Inbox</a>
+                                                    </div>
+                                                    <div class="col-12 text-left">
+                                                        <a href="#"><i class="ion ion-settings"></i> Setting</a>
+                                                    </div>
+                                                    <div role="separator" class="divider col-12"></div>
+                                                    <div class="col-12 text-left">
+                                                        <a href="#"><i class="ti-settings"></i> Account Setting</a>
+                                                    </div>
+                                                    <div role="separator" class="divider col-12"></div>*@
+                                                <div class="col-12 text-left">
+                                                    <button class="btn btn-primary" type="submit"><i class="fa fa-power-off"></i> Logout</button>
+                                                </div>
                                             </div>
-                                            <div class="col-12 text-left">
-                                                <a href="#"><i class="ion ion-email-unread"></i> Inbox</a>
-                                            </div>
-                                            <div class="col-12 text-left">
-                                                <a href="#"><i class="ion ion-settings"></i> Setting</a>
-                                            </div>
-                                            <div role="separator" class="divider col-12"></div>
-                                            <div class="col-12 text-left">
-                                                <a href="#"><i class="ti-settings"></i> Account Setting</a>
-                                            </div>
-                                            <div role="separator" class="divider col-12"></div>*@
-                                            <div class="col-12 text-left">
-                                                <a href="#"><i class="fa fa-power-off"></i> Logout</a>
-                                            </div>
-                                        </div>
+                                        </form>
+
                                         <!-- /.row -->
                                     </li>
                                 </ul>
                             </li>
-                          
+
                         </ul>
                     </div>
                 </nav>
             </div>
+
         </header>
 
-      
+
         <!-- Main Navbar -->
         <div class="main-nav">
             <nav class="navbar navbar-expand-lg">
@@ -425,21 +435,22 @@
     <!-- FastClick -->
     <script src="~/AdminTemplate/assets/vendor_components/fastclick/lib/fastclick.js"></script>
 
+    <!-- Select2 -->
+    <script src="~/AdminTemplate/assets/vendor_components/select2/dist/js/select2.full.js"></script>
+
     <!-- Fab Admin App -->
-   
+
     <script src="~/AdminTemplate/main/js/template.js"></script>
     <script src="~/AdminTemplate/main/js/demo.js"></script>
     <script src="~/AdminTemplate/main/js/horizontal-layout.js"></script>
     <!-- Fab Admin for demo purposes -->
- 
-
-
-
     <!-- This is data table -->
     <script src="~/AdminTemplate/assets/vendor_components/datatable/datatables.min.js"></script>
 
     <!-- Fab Admin for Data Table -->
     <script src="~/AdminTemplate/main/js/pages/data-table.js"></script>
+
+    <script src="~/AdminTemplate/main/js/pages/advanced-form-element.js"></script>
 
 
 </body>

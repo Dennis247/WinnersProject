@@ -12,5 +12,7 @@ namespace WinnersProject.Models
 
         public string pastorInCharge { get; set; }
         public string phoneNumber { get; set; }
+
+       
     }
 }

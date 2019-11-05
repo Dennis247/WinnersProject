@@ -10,5 +10,13 @@ namespace WinnersProject.Models
     {
         [Key]
         public int Id { get; set; }
+        public DateTime EntityDate { get; set; }
+
+        public Entity()
+
+        {
+            EntityDate = DateTime.Now;
+        }
+            
     }
 }

@@ -1,52 +1,57 @@
 ﻿@model IEnumerable<WinnersProject.Models.District>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Districts";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.pastorInCharge)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.phoneNumber)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.pastorInCharge)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.phoneNumber)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+<div class="row">
 
-</table>
+    <div class="col-12">
+        <div class="box">
+         
+            <div class="box-header with-border">
+                <a class="btn btn-info" href="@Url.Action("Create","Districts")"><i class="fa fa-plus"></i>Add District</a>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <div class="table-responsive">
+                    <table id="example" class="table table-bordered table-hover display nowrap margin-top-10 w-p100">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Pastor In Charge</th>
+                                <th>Phone Number</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var district in Model)
+                            {
+                                <tr>
+                                    <td>@district.name</td>
+                                    <td>@district.address</td>
+                                    <td>@district.pastorInCharge</td>
+                                    <td>@district.phoneNumber</td>
+                                    <td>
+ 
+                                        <a class="btn btn-outline-success" href="@Url.Action("DistrictMembers","Districts",new { id = district.Id,districtName= district.name})"><i class="fa fa-users"></i> VIEW MEMBERS</a>
+                                        <a class="btn btn-outline-primary" href="@Url.Action("Edit","Districts",new{id = district.Id })"><i class="fa fa-edit"></i> EDIT</a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+    </div>
+    <!-- /.col -->
+</div>

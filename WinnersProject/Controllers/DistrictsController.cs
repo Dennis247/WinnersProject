@@ -8,12 +8,41 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WinnersProject.Models;
+using System.Data.Entity.Core.Objects;
 
 namespace WinnersProject.Controllers
 {
+    [Authorize]
     public class DistrictsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+
+
+        public async Task<ActionResult> DistrictMembers(int id,string districtName,string date)
+        {
+            if(date != null)
+            {
+                DateTime convertedDate = DateTime.Parse(date);
+                ViewBag.members = db.Members.Where(x => DateTime.Compare(x.dateRegistered,convertedDate)==1).ToList();
+                ViewBag.districtName = districtName;
+                ViewBag.id = id;
+                return View();
+            }
+            ViewBag.members = db.Members.Where(x => x.districtId == id).ToList();
+            ViewBag.districtName = districtName;
+            ViewBag.id = id;
+            return View();
+        }
+
+        //[HttpPost]
+        //[ActionName("DistrictMembers")]
+        //public async Task<ActionResult> DistrictMemberx(int id, string districtName, string date)
+        //{
+        //    return View();
+        //}
+
+
+
 
         // GET: Districts
         public async Task<ActionResult> Index()

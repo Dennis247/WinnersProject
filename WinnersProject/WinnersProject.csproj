@@ -194,6 +194,26 @@
     <Compile Include="Migrations\201911040853324_InitialCreate.Designer.cs">
       <DependentUpon>201911040853324_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911050753175_MemberModelUpdate1.cs" />
+    <Compile Include="Migrations\201911050753175_MemberModelUpdate1.Designer.cs">
+      <DependentUpon>201911050753175_MemberModelUpdate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911050928329_memberModelUpdate2.cs" />
+    <Compile Include="Migrations\201911050928329_memberModelUpdate2.Designer.cs">
+      <DependentUpon>201911050928329_memberModelUpdate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911051234000_membersModelUpdate3.cs" />
+    <Compile Include="Migrations\201911051234000_membersModelUpdate3.Designer.cs">
+      <DependentUpon>201911051234000_membersModelUpdate3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911051441262_ditrictModelupdate4.cs" />
+    <Compile Include="Migrations\201911051441262_ditrictModelupdate4.Designer.cs">
+      <DependentUpon>201911051441262_ditrictModelupdate4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911051448360_entitDateAdded.cs" />
+    <Compile Include="Migrations\201911051448360_entitDateAdded.Designer.cs">
+      <DependentUpon>201911051448360_entitDateAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\District.cs" />
@@ -202,6 +222,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\MemberServices.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -9515,6 +9536,7 @@
     <Content Include="Views\Members\Details.cshtml" />
     <Content Include="Views\Members\Edit.cshtml" />
     <Content Include="Views\Members\Index.cshtml" />
+    <Content Include="Views\Districts\DistrictMembers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminTemplate\assets\vendor_components\flat-color-icons\PNG\512\A\" />
@@ -9536,6 +9558,21 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201911040853324_InitialCreate.resx">
       <DependentUpon>201911040853324_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911050753175_MemberModelUpdate1.resx">
+      <DependentUpon>201911050753175_MemberModelUpdate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911050928329_memberModelUpdate2.resx">
+      <DependentUpon>201911050928329_memberModelUpdate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911051234000_membersModelUpdate3.resx">
+      <DependentUpon>201911051234000_membersModelUpdate3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911051441262_ditrictModelupdate4.resx">
+      <DependentUpon>201911051441262_ditrictModelupdate4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911051448360_entitDateAdded.resx">
+      <DependentUpon>201911051448360_entitDateAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

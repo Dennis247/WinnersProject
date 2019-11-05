@@ -11,6 +11,7 @@ using WinnersProject.Models;
 
 namespace WinnersProject.Controllers
 {
+    [Authorize]
     public class MembersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -39,6 +40,7 @@ namespace WinnersProject.Controllers
         // GET: Members/Create
         public ActionResult Create()
         {
+            ViewBag.Districts = db.Districts.ToList();
             return View();
         }
 
@@ -47,13 +49,13 @@ namespace WinnersProject.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,name,bustop,email,phoneNo,sex,occupation,servicePreference,wasInvited,cameOnYourOwn,whoInvitedYou,phoneNoOfInvitee,newMemberStaus,prayerRequest,officialName,signatureDate,districtName,dateRegistered")] Member member)
+        public async Task<ActionResult> Create(Member member)
         {
             if (ModelState.IsValid)
             {
                 db.Members.Add(member);
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             return View(member);

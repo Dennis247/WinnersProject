@@ -10,6 +10,7 @@ namespace WinnersProject.Models
     public class Member : Entity
     {
         public string name { get; set; }
+        public string address { get; set; }
         public string bustop { get; set; }
         public string email { get; set; }
         public string phoneNo { get; set; }
@@ -17,7 +18,7 @@ namespace WinnersProject.Models
         public string occupation { get; set; }
         public string servicePreference { get; set; }
         public bool wasInvited { get; set; }
-        public bool cameOnYourOwn { get; set; }
+        public string cameOnYourOwn { get; set; }
         public string whoInvitedYou { get; set; }
         public string phoneNoOfInvitee { get; set; }
 
@@ -32,6 +33,14 @@ namespace WinnersProject.Models
 
         public string districtName { get; set; }
         public DateTime dateRegistered { get; set; }
+
+        public string asFirstTimer { get; set; }
+        public string asBornAgain { get; set; }
+
+        public string asBothFirstBornAgain { get; set; }
+
+        public int districtId { get; set; }
+
 
     }
 }
