@@ -8,149 +8,114 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WinnersProject.Models;
-using System.Data.Entity.Core.Objects;
 
 namespace WinnersProject.Controllers
 {
-    [Authorize]
-    public class DistrictsController : Controller
+    public class BranchesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private static List<District> districts;
 
-
-        public async Task<ActionResult> DistrictMembers(int id,string districtName,string date)
-        {
-            var members = db.Members.Where(x => x.districtId == id).ToList(); 
-            if (date != null)
-            {
-                List<Member> membersByDate = new List<Member>();
-                DateTime convertedDate = DateTime.Parse(date);
-
-                foreach(var member in members)
-                {
-                    if(member.dateRegistered.Date.ToString() == date)
-                    {
-                        membersByDate.Add(member);
-                    }
-                }
-                ViewBag.members = membersByDate;
-                ViewBag.districtName = districtName;
-                ViewBag.id = id;
-                return View();
-            }
-            ViewBag.members = members;
-            ViewBag.districtName = districtName;
-            ViewBag.id = id;
-            return View();
-        }
-
-        //[HttpPost]
-        //[ActionName("DistrictMembers")]
-        //public async Task<ActionResult> DistrictMemberx(int id, string districtName, string date)
-        //{
-        //    return View();
-        //}
-
-
-
-
-        // GET: Districts
+        // GET: Branches
         public async Task<ActionResult> Index()
         {
-            return View(await db.Districts.ToListAsync());
+            return View(await db.Branches.ToListAsync());
         }
 
-        // GET: Districts/Details/5
+        // GET: Branches/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            District district = await db.Districts.FindAsync(id);
-            if (district == null)
+            Branch branch = await db.Branches.FindAsync(id);
+            if (branch == null)
             {
                 return HttpNotFound();
             }
-            return View(district);
+            return View(branch);
         }
 
-        // GET: Districts/Create
+        // GET: Branches/Create
         public ActionResult Create()
         {
+            districts = db.Districts.ToList();
+            ViewBag.districts = districts;
+            
             return View();
         }
 
-        // POST: Districts/Create
+        // POST: Branches/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,name,address,pastorInCharge,phoneNumber")] District district)
+        public async Task<ActionResult> Create(Branch branch)
         {
             if (ModelState.IsValid)
             {
-                db.Districts.Add(district);
+                db.Branches.Add(branch);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-
-            return View(district);
+            ViewBag.districts = districts;
+            return View(branch);
         }
 
-        // GET: Districts/Edit/5
+        // GET: Branches/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            District district = await db.Districts.FindAsync(id);
-            if (district == null)
+            Branch branch = await db.Branches.FindAsync(id);
+            if (branch == null)
             {
                 return HttpNotFound();
             }
-            return View(district);
+            return View(branch);
         }
 
-        // POST: Districts/Edit/5
+        // POST: Branches/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,name,address,pastorInCharge,phoneNumber")] District district)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,branchName,districtId,EntityDate")] Branch branch)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(district).State = EntityState.Modified;
+                db.Entry(branch).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(district);
+            return View(branch);
         }
 
-        // GET: Districts/Delete/5
+        // GET: Branches/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            District district = await db.Districts.FindAsync(id);
-            if (district == null)
+            Branch branch = await db.Branches.FindAsync(id);
+            if (branch == null)
             {
                 return HttpNotFound();
             }
-            return View(district);
+            return View(branch);
         }
 
-        // POST: Districts/Delete/5
+        // POST: Branches/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            District district = await db.Districts.FindAsync(id);
-            db.Districts.Remove(district);
+            Branch branch = await db.Branches.FindAsync(id);
+            db.Branches.Remove(branch);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

@@ -183,6 +183,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BranchesController.cs" />
     <Compile Include="Controllers\DistrictsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -214,8 +215,21 @@
     <Compile Include="Migrations\201911051448360_entitDateAdded.Designer.cs">
       <DependentUpon>201911051448360_entitDateAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911070820574_branchMoelCreate.cs" />
+    <Compile Include="Migrations\201911070820574_branchMoelCreate.Designer.cs">
+      <DependentUpon>201911070820574_branchMoelCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911070858159_BranchModelUpdate2.cs" />
+    <Compile Include="Migrations\201911070858159_BranchModelUpdate2.Designer.cs">
+      <DependentUpon>201911070858159_BranchModelUpdate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911070914491_RequiredAttributedAdded.cs" />
+    <Compile Include="Migrations\201911070914491_RequiredAttributedAdded.Designer.cs">
+      <DependentUpon>201911070914491_RequiredAttributedAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\District.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -9537,6 +9551,11 @@
     <Content Include="Views\Members\Edit.cshtml" />
     <Content Include="Views\Members\Index.cshtml" />
     <Content Include="Views\Districts\DistrictMembers.cshtml" />
+    <Content Include="Views\Branches\Create.cshtml" />
+    <Content Include="Views\Branches\Delete.cshtml" />
+    <Content Include="Views\Branches\Details.cshtml" />
+    <Content Include="Views\Branches\Edit.cshtml" />
+    <Content Include="Views\Branches\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminTemplate\assets\vendor_components\flat-color-icons\PNG\512\A\" />
@@ -9573,6 +9592,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911051448360_entitDateAdded.resx">
       <DependentUpon>201911051448360_entitDateAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911070820574_branchMoelCreate.resx">
+      <DependentUpon>201911070820574_branchMoelCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911070858159_BranchModelUpdate2.resx">
+      <DependentUpon>201911070858159_BranchModelUpdate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911070914491_RequiredAttributedAdded.resx">
+      <DependentUpon>201911070914491_RequiredAttributedAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

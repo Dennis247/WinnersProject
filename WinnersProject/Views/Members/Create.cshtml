@@ -174,299 +174,345 @@
 
 @using WinnersProject.Models
 @model WinnersProject.Models.Member
- @{ 
-     ViewBag.Title = "Register Member";
-     var districts = (List<District>)ViewBag.Districts;
- }
+@{
+    ViewBag.Title = "Register Member";
+    var districts = (List<District>)ViewBag.Districts;
+}
 
-    <!-- Main content -->
+<!-- Main content -->
 
-    <div class="row">
-        <div class="col-lg-6 col-12">
-            <!-- Basic Forms -->
-            <div class="box">
-                <div class="box-header with-border">
-                    <h4 class="box-title">First Timers</h4>
-                    <ul class="box-controls pull-right">
-                        <li><a class="box-btn-close" href="#"></a></li>
-                        <li><a class="box-btn-slide" href="#"></a></li>
-                        <li><a class="box-btn-fullscreen" href="#"></a></li>
-                    </ul>
-                </div>
-                <!-- /.box-header -->
-                <form method="post">
-                    <div class="box-body">
-                        @*<h4 class="mt-0 mb-20">1. Customer Info:</h4>*@
-                        <div class="form-group">
-                            <label for="name">Name:</label>
-                            <input type="text" class="form-control" placeholder="Enter full name">
-                            @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <label>Address:</label>
-                            <textarea name="address" id="prayerRequest" class="form-control" placeholder="enter address"></textarea>
-                            @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <label>Contact:</label>
-                            <input name="bustop" type="text" class="form-control" placeholder="Enter Bustop">
-                            @Html.ValidationMessageFor(model => model.bustop, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <label>Phone Number:</label>
-                            <input name="phoneNo" type="text" class="form-control" placeholder="Enter phone number">
-                            @Html.ValidationMessageFor(model => model.phoneNo, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <label>Sex</label>
-                            <select name="sex" class="form-control">
-                                <option>Male</option>
-                                <option>Female</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Occupation:</label>
-                            <input name="occupation" type="text" class="form-control" placeholder="Enter Bustop">
-                            @Html.ValidationMessageFor(model => model.occupation, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <label>Which Service Do You Intend To ATtend</label>
-                            <select name="servicePreference" class="form-control">
-                                <option>6:30</option>
-                                <option>8:30</option>
-                                <option>10:30</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Were You Invited</label>
-                            <select name="wasInvited" class="form-control">
-                                <option>Yes</option>
-                                <option>No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Did You Come on Your Own</label>
-                            <select name="cameOnYourOwn" class="form-control">
-                                <option>Yes</option>
-                                <option>No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Who Invited You:</label>
-                            <input name="whoInvitedYou" type="text" class="form-control" placeholder="eneter name of person">
-                            @Html.ValidationMessageFor(model => model.whoInvitedYou, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <label>Phone Number of Who Invited You:</label>
-                            <input name="whoInvitedYou" type="text" class="form-control" placeholder="eneter phone no. of person">
-                            @Html.ValidationMessageFor(model => model.phoneNoOfInvitee, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <label>You Coming as (Tick Where Applicable)?</label>
-                            <select name="newMemberStaus" class="form-control">
-                                <option>As First Timer</option>
-                                <option>As Born Again</option>
-                                <option>As Both First Timer & Born Again</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>You Coming as (Tick Where Applicable)?</label>
-                            <div class="c-inputs-stacked">
-                                <input name="asFirstTimer" type="checkbox" id="asFirstTimer">
-                                <label for="asFirstTimer" class="block">As First Timer</label>
-                                <input name="asBornAgain" type="checkbox" id="asBornAgain">
-                                <label for="asBornAgain" class="block">As Born Again</label>
-                                <input name="asBothFirstBornAgain" type="checkbox" id="asBothFirstBornAgain">
-                                <label for="asBothFirstBornAgain" class="block">As Both First Timer and Born Again</label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Prayer Request:</label>
-                            <textarea name="prayerRequest" id="prayerRequest" class="form-control" placeholder="enter prayer request"></textarea>
-                            @Html.ValidationMessageFor(model => model.prayerRequest, "", new { @class = "text-danger" })
-                        </div>
-                        <hr>
-                        <h4 class="mt-0 mb-20">For Official Use Only:</h4>
-                        <div class="form-group">
-                            <label>Name:</label>
-                            <input name="whoInvitedYou" type="text" class="form-control" placeholder="">
-                            @Html.ValidationMessageFor(model => model.phoneNoOfInvitee, "", new { @class = "text-danger" })
-                        </div>
-
-                        <div class="form-group">
-                            <label>Signature & Date:</label>
-                            <input name="signatureDate" type="text" class="form-control" placeholder="">
-                            @Html.ValidationMessageFor(model => model.signatureDate, "", new { @class = "text-danger" })
-                        </div>
-
-                        <div class="form-group">
-                            <label>Select District</label>
-                            <select name="districtId" class="form-control select2" data-placeholder="select district"
-                                    style="width: 100%;">
-                                @{
-
-                                    foreach (var district in districts)
-                                    {
-                                        <option value="@district.Id">@district.name</option>
-                                    }
-                                }
-
-                            </select>
-                        </div>
-
-                    </div>
-                    <!-- /.box-body -->
-                    <div class="box-footer">
-
-                        <button type="submit" class="btn btn-success">Submit</button>
-                    </div>
-                </form>
+<div class="row">
+    <div class="col-lg-6 col-12">
+        <!-- Basic Forms -->
+        <div class="box">
+            <div class="box-header with-border">
+                <h4 class="box-title">First Timers</h4>
+                <ul class="box-controls pull-right">
+                    <li><a class="box-btn-close" href="#"></a></li>
+                    <li><a class="box-btn-slide" href="#"></a></li>
+                    <li><a class="box-btn-fullscreen" href="#"></a></li>
+                </ul>
             </div>
-        </div>
+            <!-- /.box-header -->
+            <form method="post">
+                <div class="box-body">
+                    @*<h4 class="mt-0 mb-20">1. Customer Info:</h4>*@
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" placeholder="Enter full name">
+                        @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Address:</label>
+                        <textarea name="address" id="prayerRequest" class="form-control" placeholder="enter address"></textarea>
+                        @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Contact:</label>
+                        <input name="bustop" type="text" class="form-control" placeholder="Enter Bustop">
+                        @Html.ValidationMessageFor(model => model.bustop, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number:</label>
+                        <input name="phoneNo" type="text" class="form-control" placeholder="Enter phone number">
+                        @Html.ValidationMessageFor(model => model.phoneNo, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Sex</label>
+                        <select name="sex" class="form-control">
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Occupation:</label>
+                        <input name="occupation" type="text" class="form-control" placeholder="Enter Bustop">
+                        @Html.ValidationMessageFor(model => model.occupation, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Which Service Do You Intend To ATtend</label>
+                        <select name="servicePreference" class="form-control">
+                            <option>6:30</option>
+                            <option>8:30</option>
+                            <option>10:30</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Were You Invited</label>
+                        <select name="wasInvited" class="form-control">
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Did You Come on Your Own</label>
+                        <select name="cameOnYourOwn" class="form-control">
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Who Invited You:</label>
+                        <input name="whoInvitedYou" type="text" class="form-control" placeholder="eneter name of person">
+                        @Html.ValidationMessageFor(model => model.whoInvitedYou, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number of Who Invited You:</label>
+                        <input name="whoInvitedYou" type="text" class="form-control" placeholder="eneter phone no. of person">
+                        @Html.ValidationMessageFor(model => model.phoneNoOfInvitee, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>You Coming as (Tick Where Applicable)?</label>
+                        <select name="newMemberStaus" class="form-control">
+                            <option>As First Timer</option>
+                            <option>As Born Again</option>
+                            <option>As Both First Timer & Born Again</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>You Coming as (Tick Where Applicable)?</label>
+                        <div class="c-inputs-stacked">
+                            <input name="asFirstTimer" type="checkbox" id="asFirstTimer">
+                            <label for="asFirstTimer" class="block">As First Timer</label>
+                            <input name="asBornAgain" type="checkbox" id="asBornAgain">
+                            <label for="asBornAgain" class="block">As Born Again</label>
+                            <input name="asBothFirstBornAgain" type="checkbox" id="asBothFirstBornAgain">
+                            <label for="asBothFirstBornAgain" class="block">As Both First Timer and Born Again</label>
+                        </div>
+                    </div>
 
-        <div class="col-lg-6 col-12">
-            <!-- Basic Forms -->
-            <div class="box">
-                <div class="box-header with-border">
-                    <h4 class="box-title">New Converts</h4>
-                    <ul class="box-controls pull-right">
-                        <li><a class="box-btn-close" href="#"></a></li>
-                        <li><a class="box-btn-slide" href="#"></a></li>
-                        <li><a class="box-btn-fullscreen" href="#"></a></li>
-                    </ul>
-                </div>
-                <!-- /.box-header -->
-                <form method="post">
-                    <div class="box-body">
-                        @*<h4 class="mt-0 mb-20">1. Customer Info:</h4>*@
-                        <div class="form-group">
-                            <label for="name">Name:</label>
-                            <input type="text" class="form-control" placeholder="Enter full name">
-                            @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <label>Address:</label>
-                            <textarea name="address" id="prayerRequest" class="form-control" placeholder="enter address"></textarea>
+                    <div class="form-group">
+                        <label>Prayer Request:</label>
+                        <textarea name="prayerRequest" id="prayerRequest" class="form-control" placeholder="enter prayer request"></textarea>
+                        @Html.ValidationMessageFor(model => model.prayerRequest, "", new { @class = "text-danger" })
+                    </div>
+                    <hr>
+                    <h4 class="mt-0 mb-20">For Official Use Only:</h4>
+                    <div class="form-group">
+                        <label>Name:</label>
+                        <input name="whoInvitedYou" type="text" class="form-control" placeholder="">
+                        @Html.ValidationMessageFor(model => model.phoneNoOfInvitee, "", new { @class = "text-danger" })
+                    </div>
 
-                            @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <label>Contact:</label>
-                            <input name="bustop" type="text" class="form-control" placeholder="Enter Bustop">
-                            @Html.ValidationMessageFor(model => model.bustop, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <label>Phone Number:</label>
-                            <input name="phoneNo" type="text" class="form-control" placeholder="Enter phone number">
-                            @Html.ValidationMessageFor(model => model.phoneNo, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <label>Sex</label>
-                            <select name="sex" class="form-control">
-                                <option>Male</option>
-                                <option>Female</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Occupation:</label>
-                            <input name="occupation" type="text" class="form-control" placeholder="Enter Bustop">
-                            @Html.ValidationMessageFor(model => model.occupation, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <label>Which Service Do You Intend To ATtend</label>
-                            <select name="servicePreference" class="form-control">
-                                <option>6:30</option>
-                                <option>8:30</option>
-                                <option>10:30</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Were You Invited</label>
-                            <select name="newMemberStaus" class="form-control">
-                                <option>As First Timer</option>
-                                <option>As Born Again</option>
-                                <option>As Both First Timer & Born Again</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Did You Come on Your Own</label>
-                            <select name="cameOnYourOwn" class="form-control">
-                                <option>Yes</option>
-                                <option>No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Who Invited You:</label>
-                            <input name="whoInvitedYou" type="text" class="form-control" placeholder="eneter name of person">
-                            @Html.ValidationMessageFor(model => model.whoInvitedYou, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <label>Phone Number of Who Invited You:</label>
-                            <input name="whoInvitedYou" type="text" class="form-control" placeholder="eneter phone no. of person">
-                            @Html.ValidationMessageFor(model => model.phoneNoOfInvitee, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <label>You Coming as (Tick Where Applicable)?</label>
-                            <select name="newMemberStaus" class="form-control">
-                                <option>As Fir</option>
-                                <option>No</option>
-                                <option>No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>You Coming as (Tick Where Applicable)?</label>
-                            <div class="c-inputs-stacked">
-                                <input name="asFirstTimer" type="checkbox" id="asFirstTimer">
-                                <label for="asFirstTimer" class="block">As First Timer</label>
-                                <input name="asBornAgain" type="checkbox" id="asBornAgain">
-                                <label for="asBornAgain" class="block">As Born Again</label>
-                                <input name="asBothFirstBornAgain" type="checkbox" id="asBothFirstBornAgain">
-                                <label for="asBothFirstBornAgain" class="block">As Both First Timer and Born Again</label>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label>Signature & Date:</label>
+                        <input name="signatureDate" type="text" class="form-control" placeholder="">
+                        @Html.ValidationMessageFor(model => model.signatureDate, "", new { @class = "text-danger" })
+                    </div>
 
-                        <div class="form-group">
-                            <label>Prayer Request:</label>
-                            <textarea name="prayerRequest" id="prayerRequest" class="form-control" placeholder="enter prayer request"></textarea>
-                            @Html.ValidationMessageFor(model => model.prayerRequest, "", new { @class = "text-danger" })
-                        </div>
-                        <hr>
-                        <h4 class="mt-0 mb-20">For Official Use Only:</h4>
-                        <div class="form-group">
-                            <label>Name:</label>
-                            <input name="officialName" type="text" class="form-control" placeholder="">
-                            @Html.ValidationMessageFor(model => model.officialName, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <label>Signature & Date:</label>
-                            <input name="signatureDate" type="text" class="form-control" placeholder="">
-                            @Html.ValidationMessageFor(model => model.signatureDate, "", new { @class = "text-danger" })
-                        </div>
-
-                        <div class="form-group">
-                            <label>Select District</label>
-                            <select name="districtId" class="form-control select2" data-placeholder="select district"
-                                    style="width: 100%;">
-                                @{
-                                    
-                                    foreach (var district in districts)
-                                    {
-                                        <option value="@district.Id">@district.name</option>
-                                    }
+                    <div class="form-group">
+                        <label>Select District</label>
+                        <select id="districtId1" name="districtId" class="form-control select2" data-placeholder="select district"
+                                style="width: 100%;">
+                            @{
+                                <option value="">--Select Districts --</option>
+                                foreach (var district in districts)
+                                {
+                                    <option value="@district.Id">@district.name</option>
                                 }
+                            }
 
-                            </select>
-                        </div>
-
+                        </select>
+                        @Html.ValidationMessageFor(model => model.districtId, "", new { @class = "text-danger" })
                     </div>
-                    <!-- /.box-body -->
-                    <div class="box-footer">
 
-                        <button type="submit" class="btn btn-success">Submit</button>
+                    <div class="form-group">
+                        <label>Select Branch</label>
+                        <select id="barnchId1" name="districtId" class="form-control select2" data-placeholder="select district"
+                                style="width: 100%;">
+                            <option value="">--Select Branch--</option>
+
+                        </select>
                     </div>
-                </form>
-            </div>
+
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </form>
         </div>
-
     </div>
+
+    <div class="col-lg-6 col-12">
+        <!-- Basic Forms -->
+        <div class="box">
+            <div class="box-header with-border">
+                <h4 class="box-title">New Converts</h4>
+                <ul class="box-controls pull-right">
+                    <li><a class="box-btn-close" href="#"></a></li>
+                    <li><a class="box-btn-slide" href="#"></a></li>
+                    <li><a class="box-btn-fullscreen" href="#"></a></li>
+                </ul>
+            </div>
+            <!-- /.box-header -->
+            <form method="post">
+                <div class="box-body">
+                    @*<h4 class="mt-0 mb-20">1. Customer Info:</h4>*@
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" placeholder="Enter full name">
+                        @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Address:</label>
+                        <textarea name="address" id="prayerRequest" class="form-control" placeholder="enter address"></textarea>
+
+                        @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Contact:</label>
+                        <input name="bustop" type="text" class="form-control" placeholder="Enter Bustop">
+                        @Html.ValidationMessageFor(model => model.bustop, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number:</label>
+                        <input name="phoneNo" type="text" class="form-control" placeholder="Enter phone number">
+                        @Html.ValidationMessageFor(model => model.phoneNo, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Sex</label>
+                        <select name="sex" class="form-control">
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Occupation:</label>
+                        <input name="occupation" type="text" class="form-control" placeholder="Enter Bustop">
+                        @Html.ValidationMessageFor(model => model.occupation, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Which Service Do You Intend To ATtend</label>
+                        <select name="servicePreference" class="form-control">
+                            <option>6:30</option>
+                            <option>8:30</option>
+                            <option>10:30</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Were You Invited</label>
+                        <select name="newMemberStaus" class="form-control">
+                            <option>As First Timer</option>
+                            <option>As Born Again</option>
+                            <option>As Both First Timer & Born Again</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Did You Come on Your Own</label>
+                        <select name="cameOnYourOwn" class="form-control">
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Who Invited You:</label>
+                        <input name="whoInvitedYou" type="text" class="form-control" placeholder="eneter name of person">
+                        @Html.ValidationMessageFor(model => model.whoInvitedYou, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number of Who Invited You:</label>
+                        <input name="whoInvitedYou" type="text" class="form-control" placeholder="eneter phone no. of person">
+                        @Html.ValidationMessageFor(model => model.phoneNoOfInvitee, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>You Coming as (Tick Where Applicable)?</label>
+                        <select name="newMemberStaus" class="form-control">
+                            <option>As Fir</option>
+                            <option>No</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>You Coming as (Tick Where Applicable)?</label>
+                        <div class="c-inputs-stacked">
+                            <input name="asFirstTimer" type="checkbox" id="asFirstTimer">
+                            <label for="asFirstTimer" class="block">As First Timer</label>
+                            <input name="asBornAgain" type="checkbox" id="asBornAgain">
+                            <label for="asBornAgain" class="block">As Born Again</label>
+                            <input name="asBothFirstBornAgain" type="checkbox" id="asBothFirstBornAgain">
+                            <label for="asBothFirstBornAgain" class="block">As Both First Timer and Born Again</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Prayer Request:</label>
+                        <textarea name="prayerRequest" id="prayerRequest" class="form-control" placeholder="enter prayer request"></textarea>
+                        @Html.ValidationMessageFor(model => model.prayerRequest, "", new { @class = "text-danger" })
+                    </div>
+                    <hr>
+                    <h4 class="mt-0 mb-20">For Official Use Only:</h4>
+                    <div class="form-group">
+                        <label>Name:</label>
+                        <input name="officialName" type="text" class="form-control" placeholder="">
+                        @Html.ValidationMessageFor(model => model.officialName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Signature & Date:</label>
+                        <input name="signatureDate" type="text" class="form-control" placeholder="">
+                        @Html.ValidationMessageFor(model => model.signatureDate, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select District</label>
+                        <select id="districtId2" name="districtId" class="form-control select2" data-placeholder="select district"
+                                style="width: 100%;">
+                            @{
+                                <option value="">--Select Districts --</option>
+                                foreach (var district in districts)
+                                {
+                                    <option value="@district.Id">@district.name</option>
+                                }
+                            }
+
+                        </select>
+                        @Html.ValidationMessageFor(model => model.districtId, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Branch</label>
+                        <select id="barnchId2" name="districtId" class="form-control select2" data-placeholder="select district"
+                                style="width: 100%;">
+                         <option value="">--Select Branch--</option>
+
+                        </select>
+                    </div>
+
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script>
+    $(document).ready(function () {
+
+
+         $("#districtId1").change(function () {
+            $.get("/Members/GetBranchList", { id: $("#districtId1").val() }, function (data) {
+                $("#barnchId1").empty();
+                $.each(data, function (index, row) {
+                    $("#barnchId1").append("<option value='" + row.Id + "'>" + row.branchName + "</option>")
+                });
+            });
+        });
+
+        $("#districtId2").change(function () {
+            $.get("/Members/GetBranchList", { id: $("#districtId2").val() }, function (data) {
+                $("#barnchId2").empty();
+                $.each(data, function (index, row) {
+                    $("#barnchId2").append("<option value='" + row.Id + "'>" + row.branchName + "</option>")
+                });
+            });
+        });
+
+  
+    });
+</script>

@@ -44,6 +44,14 @@ namespace WinnersProject.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult GetBranchList(int id)
+        {
+         //   db.Configuration.ProxyCreationEnabled = false;
+            var branches = db.Branches.Where(x => x.DistrictId == id).Select(y=>new { y.Id,y.branchName}).ToList();
+            return Json(branches, JsonRequestBehavior.AllowGet);
+        }
+
         // POST: Members/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.

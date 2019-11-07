@@ -1,0 +1,61 @@
+﻿@using WinnersProject.Models
+@model WinnersProject.Models.Branch
+
+@{
+    ViewBag.Title = "Add Branch";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var districts = ViewBag.districts as List<District>;
+}
+
+    <div class="row">
+        <div class="col-lg-6 col-12">
+            <!-- Basic Forms -->
+            <div class="box">
+                <div class="box-header with-border">
+                    <h4 class="box-title">First Timers</h4>
+                    <ul class="box-controls pull-right">
+                        <li><a class="box-btn-close" href="#"></a></li>
+                        <li><a class="box-btn-slide" href="#"></a></li>
+                        <li><a class="box-btn-fullscreen" href="#"></a></li>
+                    </ul>
+                </div>
+                <!-- /.box-header -->
+                <form method="post">
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="box-body">
+                        @*<h4 class="mt-0 mb-20">1. Customer Info:</h4>*@
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input name="branchName" type="text" required class="form-control" placeholder="Enter Branch Name">
+                            @Html.ValidationMessageFor(model => model.branchName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label>Select District</label>
+                            <select name="districtId" class="form-control select2" data-placeholder="select district"
+                                    style="width: 100%;">
+                                @{
+
+                                    foreach (var district in districts)
+                                    {
+                                        <option value="@district.Id">@district.name</option>
+                                    }
+                                }
+
+                            </select>
+                        </div>
+
+
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+      
+
+    </div>

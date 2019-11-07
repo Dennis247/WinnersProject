@@ -32,5 +32,6 @@ namespace WinnersProject.Models
 
         public DbSet<Member> Members { get; set; }
         public DbSet<District> Districts { get; set; }
+        public DbSet<Branch> Branches { get; set; }
     }
 }
