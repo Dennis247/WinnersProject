@@ -25,16 +25,22 @@
                         <tbody>
                             @foreach (var branch in Model)
                             {
-                                <tr>
-                                    <td>@branch.branchName</td>
-                                    <td>@branch.District.name</td>
- 
-                                    <td>
+                            <tr>
+                                <td>@branch.branchName</td>
+                                <td>@branch.District.name</td>
 
-                                        @*<a class="btn btn-outline-success" href="@Url.Action("Edit","Branches",new { id = district.Id,districtName= district.name})"><i class="fa fa-users"></i> VIEW MEMBERS</a>*@
-                                        <a class="btn btn-outline-primary" href="@Url.Action("Edit","Branches",new{id = branch.Id })"><i class="fa fa-edit"></i> EDIT</a>
-                                    </td>
-                                </tr>
+                                <td>
+
+                                    @*<a class="btn btn-outline-success" href="@Url.Action("Edit","Branches",new { id = district.Id,districtName= district.name})"><i class="fa fa-users"></i> VIEW MEMBERS</a>*@
+                                    <a class="btn btn-outline-primary" href="@Url.Action("Edit","Branches",new{id = branch.Id })"><i class="fa fa-edit"></i> EDIT</a>
+                                </td>
+
+                                <td>
+
+                                    @*<a class="btn btn-outline-success" href="@Url.Action("Edit","Branches",new { id = district.Id,districtName= district.name})"><i class="fa fa-users"></i> VIEW MEMBERS</a>*@
+                                    <a class="btn btn-outline-danger" href="@Url.Action("Delete","Branches",new{id = branch.Id })"><i class="fa fa-trash"></i> DELETE</a>
+                                </td>
+                            </tr>
                             }
 
                         </tbody>

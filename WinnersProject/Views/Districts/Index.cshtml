@@ -33,9 +33,10 @@
                                     <td>@district.pastorInCharge</td>
                                     <td>@district.phoneNumber</td>
                                     <td>
- 
+
                                         <a class="btn btn-outline-success" href="@Url.Action("DistrictMembers","Districts",new { id = district.Id,districtName= district.name})"><i class="fa fa-users"></i> VIEW MEMBERS</a>
                                         <a class="btn btn-outline-primary" href="@Url.Action("Edit","Districts",new{id = district.Id })"><i class="fa fa-edit"></i> EDIT</a>
+                                        <a class="btn btn-outline-danger" href="@Url.Action("Delete","Districts",new{id = district.Id })"><i class="fa fa-trash"></i> DELETE</a>
                                     </td>
                                 </tr>
                             }

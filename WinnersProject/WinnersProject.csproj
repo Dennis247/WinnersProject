@@ -227,6 +227,22 @@
     <Compile Include="Migrations\201911070914491_RequiredAttributedAdded.Designer.cs">
       <DependentUpon>201911070914491_RequiredAttributedAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911080946382_MemberCleanUp.cs" />
+    <Compile Include="Migrations\201911080946382_MemberCleanUp.Designer.cs">
+      <DependentUpon>201911080946382_MemberCleanUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911081012470_MemberModelFix.cs" />
+    <Compile Include="Migrations\201911081012470_MemberModelFix.Designer.cs">
+      <DependentUpon>201911081012470_MemberModelFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911081024241_dateRegisteredRemoved.cs" />
+    <Compile Include="Migrations\201911081024241_dateRegisteredRemoved.Designer.cs">
+      <DependentUpon>201911081024241_dateRegisteredRemoved.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911081048044_DistrictModelNav.cs" />
+    <Compile Include="Migrations\201911081048044_DistrictModelNav.Designer.cs">
+      <DependentUpon>201911081048044_DistrictModelNav.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Branch.cs" />
@@ -9601,6 +9617,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911070914491_RequiredAttributedAdded.resx">
       <DependentUpon>201911070914491_RequiredAttributedAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911080946382_MemberCleanUp.resx">
+      <DependentUpon>201911080946382_MemberCleanUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911081012470_MemberModelFix.resx">
+      <DependentUpon>201911081012470_MemberModelFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911081024241_dateRegisteredRemoved.resx">
+      <DependentUpon>201911081024241_dateRegisteredRemoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911081048044_DistrictModelNav.resx">
+      <DependentUpon>201911081048044_DistrictModelNav.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -17,7 +17,7 @@ namespace WinnersProject.Models
         public string sex { get; set; }
         public string occupation { get; set; }
         public string servicePreference { get; set; }
-        public bool wasInvited { get; set; }
+        public string wasInvited { get; set; }
         public string cameOnYourOwn { get; set; }
         public string whoInvitedYou { get; set; }
         public string phoneNoOfInvitee { get; set; }
@@ -31,15 +31,16 @@ namespace WinnersProject.Models
         public string officialName { get; set; }
         public string signatureDate { get; set; }
 
-        public string districtName { get; set; }
-        public DateTime dateRegistered { get; set; }
-
         public string asFirstTimer { get; set; }
         public string asBornAgain { get; set; }
 
         public string asBothFirstBornAgain { get; set; }
 
         public int districtId { get; set; }
+
+
+        public int BranchId { get; set; }
+        public Branch Branch { get; set; }
 
 
     }

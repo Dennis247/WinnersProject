@@ -1,11 +1,11 @@
 ﻿@model WinnersProject.Models.District
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Delete District";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
+@*<h2>Delete</h2>
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
@@ -46,7 +46,8 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
@@ -54,4 +55,62 @@
             @Html.ActionLink("Back to List", "Index")
         </div>
     }
+</div>*@
+
+
+
+<div class="row">
+    <div class="col-lg-6 col-12">
+        <!-- Basic Forms -->
+        <div class="box">
+            <div class="box-header with-border">
+                <h4 class="box-title">PLEASE CONFIRM YOU WANT TO DELETE THIS DISTRICT</h4>
+                <ul class="box-controls pull-right">
+                    <li><a class="box-btn-close" href="#"></a></li>
+                    <li><a class="box-btn-slide" href="#"></a></li>
+                    <li><a class="box-btn-fullscreen" href="#"></a></li>
+                </ul>
+            </div>
+            <!-- /.box-header -->
+            <form method="post">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="box-body">
+                    @*<h4 class="mt-0 mb-20">1. Customer Info:</h4>*@
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input name="name" readonly type="text" value="@Model.name" required class="form-control" >
+                        @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Pastor In Charge:</label>
+                        <input readonly name="pastorInCharge" value="@Model.pastorInCharge" type="text" class="form-control">
+                        @Html.ValidationMessageFor(model => model.pastorInCharge, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Address:</label>
+                        <input readonly name="address" type="text" value="@Model.address" required class="form-control" >
+                        @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Phone Number:</label>
+                        <input readonly name="phoneNumber" value="@Model.phoneNumber" type="text" class="form-control" >
+                        @Html.ValidationMessageFor(model => model.phoneNumber, "", new { @class = "text-danger" })
+                    </div>
+
+
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
 </div>

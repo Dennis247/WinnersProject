@@ -23,7 +23,7 @@ namespace WinnersProject.Models
 
         }
 
-        public District(string name,string address,string pastorInCharge,string phoneNumber) {
+        public District(string name, string pastorInCharge, string address,string phoneNumber) {
             this.name = name;
             this.address = address;
             this.pastorInCharge = pastorInCharge;

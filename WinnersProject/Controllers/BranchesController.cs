@@ -14,7 +14,7 @@ namespace WinnersProject.Controllers
     public class BranchesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        private static List<District> districts;
+
 
         // GET: Branches
         public async Task<ActionResult> Index()
@@ -40,8 +40,8 @@ namespace WinnersProject.Controllers
         // GET: Branches/Create
         public ActionResult Create()
         {
-            districts = db.Districts.ToList();
-            ViewBag.districts = districts;
+            ViewBag.districts = db.Districts.ToList();
+           
             
             return View();
         }
@@ -59,7 +59,7 @@ namespace WinnersProject.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewBag.districts = districts;
+            ViewBag.districts = db.Districts.ToList();
             return View(branch);
         }
 
@@ -75,6 +75,7 @@ namespace WinnersProject.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.districts = db.Districts.ToList();
             return View(branch);
         }
 

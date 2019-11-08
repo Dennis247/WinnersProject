@@ -28,7 +28,7 @@ namespace WinnersProject.Controllers
 
                 foreach(var member in members)
                 {
-                    if(member.dateRegistered.Date.ToString() == date)
+                    if(member.EntityDate.Date.ToString() == date)
                     {
                         membersByDate.Add(member);
                     }
@@ -78,7 +78,7 @@ namespace WinnersProject.Controllers
         // GET: Districts/Create
         public ActionResult Create()
         {
-            return View();
+            return View(new District());
         }
 
         // POST: Districts/Create

@@ -1,155 +1,142 @@
 ﻿@model WinnersProject.Models.Member
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Member Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>Member</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.name)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.name)
-        </dd>
+    <div class="row">
+        <div class="col-lg-6 col-12">
+            <!-- Basic Forms -->
+            <div class="box">
+                <div class="box-header with-border">
+                    <h4 class="box-title">Member Details</h4>
+                    <ul class="box-controls pull-right">
+                        <li><a class="box-btn-close" href="#"></a></li>
+                        <li><a class="box-btn-slide" href="#"></a></li>
+                        <li><a class="box-btn-fullscreen" href="#"></a></li>
+                    </ul>
+                </div>
+                <!-- /.box-header -->
+                <form method="">
+                  
+                 
+                    <div class="box-body">
+                        @*<h4 class="mt-0 mb-20">1. Customer Info:</h4>*@
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input name="name" value="@Model.name" type="text" class="form-control" readonly>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.bustop)
-        </dt>
+                        </div>
+                        <div class="form-group">
+                            <label>Address:</label>
+                            <textarea name="address" id="" class="form-control" readonly>@Model.address</textarea>
 
-        <dd>
-            @Html.DisplayFor(model => model.bustop)
-        </dd>
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.email)
-        </dt>
+                        <div class="form-group">
+                            <label>Bus top:</label>
+                            <input name="bustop" value="@Model.bustop"  class="form-control" readonly>
 
-        <dd>
-            @Html.DisplayFor(model => model.email)
-        </dd>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number:</label>
+                            <input name="phoneNo" value="@Model.phoneNo" type="tel" class="form-control" readonly>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.phoneNo)
-        </dt>
+                        </div>
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input name="email" value="@Model.email" type="tel" class="form-control" readonly>
 
-        <dd>
-            @Html.DisplayFor(model => model.phoneNo)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.sex)
-        </dt>
+                        </div>
+                        <div class="form-group">
+                            <label>Sex</label>
+                            <input name="sex" value="@Model.sex" type="text" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Occupation:</label>
+                            <input name="occupation" value="@Model.occupation" type="text" class="form-control" readonly>
 
-        <dd>
-            @Html.DisplayFor(model => model.sex)
-        </dd>
+                        </div>
+                        <div class="form-group">
+                            <label>Which Service Do You Intend To ATtend</label>
+                            <input name="occupation" value="@Model.servicePreference" type="text" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Were You Invited</label>
+                            <input name="occupation" value="@Model.wasInvited" type="text" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Did You Come on Your Own</label>
+                            <input name="cameOnYourOwn" value="@Model.cameOnYourOwn" type="text" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Who Invited You:</label>
+                            <input name="whoInvitedYou" value="@Model.whoInvitedYou" type="text" class="form-control" readonly>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.occupation)
-        </dt>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number of Who Invited You:</label>
+                            <input name="phoneNoOfInvitee" value="@Model.phoneNoOfInvitee" type="tel" class="form-control" readonly>
 
-        <dd>
-            @Html.DisplayFor(model => model.occupation)
-        </dd>
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.servicePreference)
-        </dt>
+                  
 
-        <dd>
-            @Html.DisplayFor(model => model.servicePreference)
-        </dd>
+                        <div class="form-group">
+                            <label>Coming As First Timer:</label>
+                            <input name="asFirstTimer" value="@Model.asFirstTimer" type="tel" class="form-control" readonly>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.wasInvited)
-        </dt>
+                        </div>
+                        <div class="form-group">
+                            <label>Coming As Born Again:</label>
+                            <input name="asBornAgain" value="@Model.asBornAgain" type="tel" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Coming As Both First Timer & Born Again:</label>
+                            <input name="asBornAgain" value="@Model.asBothFirstBornAgain" type="tel" class="form-control" readonly>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.wasInvited)
-        </dd>
+                        <hr>
+                        <h4 class="mt-0 mb-20">For Official Use Only:</h4>
+                        <div class="form-group">
+                            <label>Name:</label>
+                            <input name="officialName" value="@Model.officialName" type="text" class="form-control" readonly>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.cameOnYourOwn)
-        </dt>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.cameOnYourOwn)
-        </dd>
+                        <div class="form-group">
+                            <label>Signature & Date:</label>
+                            <input name="signatureDate" value="@Model.signatureDate" type="text" class="form-control" readonly>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.whoInvitedYou)
-        </dt>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.whoInvitedYou)
-        </dd>
+                        <div class="form-group">
+                            <label> District</label>
+                            <input name="" value="@Model.Branch.District.name" type="text" class="form-control" readonly>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.phoneNoOfInvitee)
-        </dt>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.phoneNoOfInvitee)
-        </dd>
+                        <div class="form-group">
+                            <label> Branch</label>
+                            <input name="" value="@Model.Branch.branchName" type="text" class="form-control" readonly>
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.newMemberStaus)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.newMemberStaus)
-        </dd>
+                        <div class="form-group">
+                            <label> Entry Status</label>
+                            <input name="" value="@Model.newMemberStaus" type="text" class="form-control" readonly>
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.prayerRequest)
-        </dt>
+                    </div>
+                    <!-- /.box-body -->
+              
+                </form>
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.prayerRequest)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.officialName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.officialName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.signatureDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.signatureDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.districtName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.districtName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.dateRegistered)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.dateRegistered)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    </div>

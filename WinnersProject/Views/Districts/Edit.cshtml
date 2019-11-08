@@ -1,67 +1,63 @@
 ﻿@model WinnersProject.Models.District
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit District";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
 
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>District</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+<div class="row">
+    <div class="col-lg-6 col-12">
+        <!-- Basic Forms -->
+        <div class="box">
+            <div class="box-header with-border">
+                <h4 class="box-title">Edit District</h4>
+                <ul class="box-controls pull-right">
+                    <li><a class="box-btn-close" href="#"></a></li>
+                    <li><a class="box-btn-slide" href="#"></a></li>
+                    <li><a class="box-btn-fullscreen" href="#"></a></li>
+                </ul>
             </div>
-        </div>
+            <!-- /.box-header -->
+            <form method="post">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="box-body">
+                    @*<h4 class="mt-0 mb-20">1. Customer Info:</h4>*@
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input name="name" type="text" value="@Model.name" required class="form-control" placeholder="Enter District Name">
+                        @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Pastor In Charge:</label>
+                        <input name="pastorInCharge" value="@Model.pastorInCharge" type="text" class="form-control" placeholder="Enter Pastor In Charge">
+                        @Html.ValidationMessageFor(model => model.pastorInCharge, "", new { @class = "text-danger" })
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.address, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <div class="form-group">
+                        <label for="name">Address:</label>
+                        <input name="address" type="text" value="@Model.address" required class="form-control" placeholder="Enter Address">
+                        @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.pastorInCharge, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.pastorInCharge, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.pastorInCharge, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <div class="form-group">
+                        <label for="name">Phone Number:</label>
+                        <input name="phoneNumber" value="@Model.phoneNumber" type="text" class="form-control" placeholder="Enter phoneNumber">
+                        @Html.ValidationMessageFor(model => model.phoneNumber, "", new { @class = "text-danger" })
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.phoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.phoneNumber, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.phoneNumber, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </form>
         </div>
     </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+
+
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

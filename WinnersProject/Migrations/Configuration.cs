@@ -148,9 +148,9 @@ namespace WinnersProject.Migrations
 
 
 
-            context.Districts.AddRange(districtsSeed);
-            context.Branches.AddRange(branchesSeed);
-            context.SaveChanges();
+       //  context.Districts.AddRange(districtsSeed);
+        //  context.Branches.AddRange(branchesSeed);
+           context.SaveChanges();
 
         }
     }

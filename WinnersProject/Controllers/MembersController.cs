@@ -29,7 +29,7 @@ namespace WinnersProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Member member = await db.Members.FindAsync(id);
+            Member member = await db.Members.Include(x=>x.Branch).FirstOrDefaultAsync(x=>x.Id ==id);
             if (member == null)
             {
                 return HttpNotFound();
@@ -38,10 +38,14 @@ namespace WinnersProject.Controllers
         }
 
         // GET: Members/Create
-        public ActionResult Create()
+        public ActionResult Create(string message)
         {
+            if(message!=null)
+            {
+                ViewBag.Message = message;
+            }
             ViewBag.Districts = db.Districts.ToList();
-            return View();
+            return View(new Member());
         }
 
         [HttpGet]
@@ -59,13 +63,19 @@ namespace WinnersProject.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(Member member)
         {
+
+            member.asBornAgain = convertCheckBox(member.asBornAgain);
+            member.asBothFirstBornAgain = convertCheckBox(member.asBothFirstBornAgain);
+            member.asFirstTimer = convertCheckBox(member.asFirstTimer);
+
+
             if (ModelState.IsValid)
             {
                 db.Members.Add(member);
                 await db.SaveChangesAsync();
-                return RedirectToAction("Create");
+                return RedirectToAction("Create", "Members",new { message = "Member Added Successfully" });
             }
-
+            
             return View(member);
         }
 
@@ -133,6 +143,18 @@ namespace WinnersProject.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public string convertCheckBox(string status)
+        {
+            if (status == null)
+            {
+                return "No";
+            }
+            else
+            {
+                return "Yes";
+            }
         }
     }
 }

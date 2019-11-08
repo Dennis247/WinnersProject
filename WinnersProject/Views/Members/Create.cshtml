@@ -1,176 +1,4 @@
-﻿@*@model WinnersProject.Models.Member
-
-    @{
-        ViewBag.Title = "Create";
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
-
-    <h2>Create</h2>
-
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-horizontal">
-            <h4>Member</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.bustop, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.bustop, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.bustop, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.phoneNo, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.phoneNo, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.phoneNo, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.sex, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.sex, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.sex, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.occupation, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.occupation, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.occupation, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.servicePreference, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.servicePreference, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.servicePreference, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.wasInvited, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.wasInvited)
-                        @Html.ValidationMessageFor(model => model.wasInvited, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.cameOnYourOwn, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.cameOnYourOwn)
-                        @Html.ValidationMessageFor(model => model.cameOnYourOwn, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.whoInvitedYou, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.whoInvitedYou, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.whoInvitedYou, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.phoneNoOfInvitee, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.phoneNoOfInvitee, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.phoneNoOfInvitee, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.newMemberStaus, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.newMemberStaus, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.newMemberStaus, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.prayerRequest, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.prayerRequest, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.prayerRequest, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.officialName, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.officialName, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.officialName, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.signatureDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.signatureDate, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.signatureDate, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.districtName, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.districtName, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.districtName, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.dateRegistered, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.dateRegistered, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.dateRegistered, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
-            </div>
-        </div>
-    }
-
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
-
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-    }*@
+﻿
 
 @using WinnersProject.Models
 @model WinnersProject.Models.Member
@@ -195,18 +23,22 @@
             </div>
             <!-- /.box-header -->
             <form method="post">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <input name="newMemberStaus" hidden required type="text" value="First Timer" class="form-control" placeholder="Enter full name">
                 <div class="box-body">
                     @*<h4 class="mt-0 mb-20">1. Customer Info:</h4>*@
                     <div class="form-group">
                         <label for="name">Name:</label>
-                        <input type="text" class="form-control" placeholder="Enter full name">
+                        <input name="name" value="@Model.name" type="text" class="form-control" placeholder="Enter full name">
                         @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
                     </div>
                     <div class="form-group">
                         <label>Address:</label>
-                        <textarea name="address" id="prayerRequest" class="form-control" placeholder="enter address"></textarea>
+                        <textarea name="address" id="prayerRequest" class="form-control" placeholder="enter address">@Model.address</textarea>
                         @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
                     </div>
+
                     <div class="form-group">
                         <label>Contact:</label>
                         <input name="bustop" type="text" class="form-control" placeholder="Enter Bustop">
@@ -214,27 +46,32 @@
                     </div>
                     <div class="form-group">
                         <label>Phone Number:</label>
-                        <input name="phoneNo" type="text" class="form-control" placeholder="Enter phone number">
+                        <input name="phoneNo" type="tel" class="form-control" placeholder="Enter phone number">
                         @Html.ValidationMessageFor(model => model.phoneNo, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input name="email" type="tel" class="form-control" placeholder="Enter email">
+                        @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
                     </div>
                     <div class="form-group">
                         <label>Sex</label>
                         <select name="sex" class="form-control">
-                            <option>Male</option>
-                            <option>Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Occupation:</label>
-                        <input name="occupation" type="text" class="form-control" placeholder="Enter Bustop">
+                        <input name="occupation" type="text" class="form-control" placeholder="Enter Occupation">
                         @Html.ValidationMessageFor(model => model.occupation, "", new { @class = "text-danger" })
                     </div>
                     <div class="form-group">
                         <label>Which Service Do You Intend To ATtend</label>
                         <select name="servicePreference" class="form-control">
-                            <option>6:30</option>
-                            <option>8:30</option>
-                            <option>10:30</option>
+                            <option>6:30 AM</option>
+                            <option>8:30 AM</option>
+                            <option>10:30 AM</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -258,17 +95,10 @@
                     </div>
                     <div class="form-group">
                         <label>Phone Number of Who Invited You:</label>
-                        <input name="whoInvitedYou" type="text" class="form-control" placeholder="eneter phone no. of person">
+                        <input name="phoneNoOfInvitee" type="tel" class="form-control" placeholder="eneter phone no. of person">
                         @Html.ValidationMessageFor(model => model.phoneNoOfInvitee, "", new { @class = "text-danger" })
                     </div>
-                    <div class="form-group">
-                        <label>You Coming as (Tick Where Applicable)?</label>
-                        <select name="newMemberStaus" class="form-control">
-                            <option>As First Timer</option>
-                            <option>As Born Again</option>
-                            <option>As Both First Timer & Born Again</option>
-                        </select>
-                    </div>
+
                     <div class="form-group">
                         <label>You Coming as (Tick Where Applicable)?</label>
                         <div class="c-inputs-stacked">
@@ -290,8 +120,8 @@
                     <h4 class="mt-0 mb-20">For Official Use Only:</h4>
                     <div class="form-group">
                         <label>Name:</label>
-                        <input name="whoInvitedYou" type="text" class="form-control" placeholder="">
-                        @Html.ValidationMessageFor(model => model.phoneNoOfInvitee, "", new { @class = "text-danger" })
+                        <input name="officialName" type="text" class="form-control" placeholder="">
+                        @Html.ValidationMessageFor(model => model.officialName, "", new { @class = "text-danger" })
                     </div>
 
                     <div class="form-group">
@@ -318,7 +148,7 @@
 
                     <div class="form-group">
                         <label>Select Branch</label>
-                        <select id="barnchId1" name="districtId" class="form-control select2" data-placeholder="select district"
+                        <select id="barnchId1" name="branchId" class="form-control select2" data-placeholder="select district"
                                 style="width: 100%;">
                             <option value="">--Select Branch--</option>
 
@@ -348,19 +178,22 @@
             </div>
             <!-- /.box-header -->
             <form method="post">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <input name="newMemberStaus" hidden required type="text" value="New Convert" class="form-control" placeholder="Enter full name">
                 <div class="box-body">
                     @*<h4 class="mt-0 mb-20">1. Customer Info:</h4>*@
                     <div class="form-group">
                         <label for="name">Name:</label>
-                        <input type="text" class="form-control" placeholder="Enter full name">
+                        <input name="name" value="@Model.name" type="text" class="form-control" placeholder="Enter full name">
                         @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
                     </div>
                     <div class="form-group">
                         <label>Address:</label>
-                        <textarea name="address" id="prayerRequest" class="form-control" placeholder="enter address"></textarea>
-
+                        <textarea name="address" id="prayerRequest" class="form-control" placeholder="enter address">@Model.address</textarea>
                         @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
                     </div>
+
                     <div class="form-group">
                         <label>Contact:</label>
                         <input name="bustop" type="text" class="form-control" placeholder="Enter Bustop">
@@ -368,35 +201,39 @@
                     </div>
                     <div class="form-group">
                         <label>Phone Number:</label>
-                        <input name="phoneNo" type="text" class="form-control" placeholder="Enter phone number">
+                        <input name="phoneNo" type="tel" class="form-control" placeholder="Enter phone number">
                         @Html.ValidationMessageFor(model => model.phoneNo, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input name="email" type="tel" class="form-control" placeholder="Enter email">
+                        @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
                     </div>
                     <div class="form-group">
                         <label>Sex</label>
                         <select name="sex" class="form-control">
-                            <option>Male</option>
-                            <option>Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Occupation:</label>
-                        <input name="occupation" type="text" class="form-control" placeholder="Enter Bustop">
+                        <input name="occupation" type="text" class="form-control" placeholder="Enter Occupation">
                         @Html.ValidationMessageFor(model => model.occupation, "", new { @class = "text-danger" })
                     </div>
                     <div class="form-group">
                         <label>Which Service Do You Intend To ATtend</label>
                         <select name="servicePreference" class="form-control">
-                            <option>6:30</option>
-                            <option>8:30</option>
-                            <option>10:30</option>
+                            <option>6:30 AM</option>
+                            <option>8:30 AM</option>
+                            <option>10:30 AM</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Were You Invited</label>
-                        <select name="newMemberStaus" class="form-control">
-                            <option>As First Timer</option>
-                            <option>As Born Again</option>
-                            <option>As Both First Timer & Born Again</option>
+                        <select name="wasInvited" class="form-control">
+                            <option>Yes</option>
+                            <option>No</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -413,26 +250,19 @@
                     </div>
                     <div class="form-group">
                         <label>Phone Number of Who Invited You:</label>
-                        <input name="whoInvitedYou" type="text" class="form-control" placeholder="eneter phone no. of person">
+                        <input name="phoneNoOfInvitee" type="tel" class="form-control" placeholder="eneter phone no. of person">
                         @Html.ValidationMessageFor(model => model.phoneNoOfInvitee, "", new { @class = "text-danger" })
                     </div>
-                    <div class="form-group">
-                        <label>You Coming as (Tick Where Applicable)?</label>
-                        <select name="newMemberStaus" class="form-control">
-                            <option>As Fir</option>
-                            <option>No</option>
-                            <option>No</option>
-                        </select>
-                    </div>
+
                     <div class="form-group">
                         <label>You Coming as (Tick Where Applicable)?</label>
                         <div class="c-inputs-stacked">
-                            <input name="asFirstTimer" type="checkbox" id="asFirstTimer">
-                            <label for="asFirstTimer" class="block">As First Timer</label>
-                            <input name="asBornAgain" type="checkbox" id="asBornAgain">
-                            <label for="asBornAgain" class="block">As Born Again</label>
-                            <input name="asBothFirstBornAgain" type="checkbox" id="asBothFirstBornAgain">
-                            <label for="asBothFirstBornAgain" class="block">As Both First Timer and Born Again</label>
+                            <input name="asFirstTimer" type="checkbox" id="asFirstTimer1">
+                            <label for="asFirstTimer1" class="block">As First Timer</label>
+                            <input name="asBornAgain" type="checkbox" id="asBornAgain1">
+                            <label for="asBornAgain1" class="block">As Born Again</label>
+                            <input name="asBothFirstBornAgain" type="checkbox" id="asBothFirstBornAgain1">
+                            <label for="asBothFirstBornAgain1" class="block">As Both First Timer and Born Again</label>
                         </div>
                     </div>
 
@@ -448,6 +278,7 @@
                         <input name="officialName" type="text" class="form-control" placeholder="">
                         @Html.ValidationMessageFor(model => model.officialName, "", new { @class = "text-danger" })
                     </div>
+
                     <div class="form-group">
                         <label>Signature & Date:</label>
                         <input name="signatureDate" type="text" class="form-control" placeholder="">
@@ -472,12 +303,13 @@
 
                     <div class="form-group">
                         <label>Select Branch</label>
-                        <select id="barnchId2" name="districtId" class="form-control select2" data-placeholder="select district"
+                        <select id="barnchId2" name="branchId" class="form-control select2" data-placeholder="select district"
                                 style="width: 100%;">
-                         <option value="">--Select Branch--</option>
+                            <option value="">--Select Branch--</option>
 
                         </select>
                     </div>
+
 
                 </div>
                 <!-- /.box-body -->
@@ -490,10 +322,24 @@
     </div>
 
 </div>
+
+   @{ 
+       if (ViewBag.Message != null)
+       {
+           <script>alert("Member Added Sucessfully")</script>
+       }
+       ViewBag.Message = null;
+   }
+
 <script src="~/Scripts/jquery-3.3.1.js"></script>
 <script>
     $(document).ready(function () {
 
+        @if(ViewBag.Message !=null)
+        {
+            var message = (string)ViewBag.Message;
+            
+        }
 
          $("#districtId1").change(function () {
             $.get("/Members/GetBranchList", { id: $("#districtId1").val() }, function (data) {
