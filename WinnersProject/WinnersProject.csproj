@@ -243,6 +243,10 @@
     <Compile Include="Migrations\201911081048044_DistrictModelNav.Designer.cs">
       <DependentUpon>201911081048044_DistrictModelNav.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911091129131_MemberModelRequired.cs" />
+    <Compile Include="Migrations\201911091129131_MemberModelRequired.Designer.cs">
+      <DependentUpon>201911091129131_MemberModelRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Branch.cs" />
@@ -6704,18 +6708,6 @@
     <Content Include="AdminTemplate\assets\vendor_components\PACE\themes\yellow\pace-theme-loading-bar.css" />
     <Content Include="AdminTemplate\assets\vendor_components\PACE\themes\yellow\pace-theme-mac-osx.css" />
     <Content Include="AdminTemplate\assets\vendor_components\PACE\themes\yellow\pace-theme-minimal.css" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\esm\popper-utils.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\esm\popper-utils.min.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\esm\popper.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\esm\popper.min.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\popper-utils.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\popper-utils.min.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\popper.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\popper.min.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\umd\popper-utils.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\umd\popper-utils.min.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\umd\popper.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\umd\popper.min.js" />
     <Content Include="AdminTemplate\assets\vendor_components\popper\docs\css\code.css" />
     <Content Include="AdminTemplate\assets\vendor_components\popper\docs\css\font-awesome.min.css" />
     <Content Include="AdminTemplate\assets\vendor_components\popper\docs\css\images\arrow.svg" />
@@ -6776,116 +6768,6 @@
     <Content Include="AdminTemplate\assets\vendor_components\popper\docs\_layouts\page-hashtag.html" />
     <Content Include="AdminTemplate\assets\vendor_components\popper\docs\_layouts\page-nowrap.html" />
     <Content Include="AdminTemplate\assets\vendor_components\popper\docs\_layouts\page.html" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\babel-config\index.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\bundle\index.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\eslint-config-popper\index.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\.eslintrc.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\bundle.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\index.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\methods\defaults.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\methods\destroy.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\methods\disableEventListeners.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\methods\enableEventListeners.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\methods\placements.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\methods\update.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\modifiers\applyStyle.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\modifiers\arrow.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\modifiers\computeStyle.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\modifiers\flip.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\modifiers\hide.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\modifiers\index.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\modifiers\inner.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\modifiers\keepTogether.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\modifiers\offset.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\modifiers\preventOverflow.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\modifiers\shift.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\clockwise.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\computeAutoPlacement.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\debounce.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\find.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\findCommonOffsetParent.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\findIndex.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\getBordersSize.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\getBoundaries.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\getBoundingClientRect.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\getClientRect.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\getOffsetParent.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\getOffsetRect.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\getOppositePlacement.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\getOppositeVariation.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\getOuterSizes.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\getParentNode.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\getPopperOffsets.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\getReferenceOffsets.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\getRoot.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\getScroll.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\getScrollParent.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\getStyleComputedProperty.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\getSupportedPropertyName.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\getWindowSizes.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\includeScroll.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\index.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\isFixed.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\isFunction.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\isIE10.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\isModifierEnabled.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\isModifierRequired.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\isNative.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\isNumeric.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\isOffsetContainer.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\removeEventListeners.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\runModifiers.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\setAttributes.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\setStyles.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\src\utils\setupEventListeners.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\.eslintrc.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\functional\arrow.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\functional\core.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\functional\flips.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\functional\lifecycle.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\functional\offset.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\functional\rendering.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\styles\test.css" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\unit\clockwise.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\unit\debounce.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\unit\find.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\unit\findIndex.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\unit\getClientRect.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\unit\getOffsetParent.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\unit\getOppositePlacement.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\unit\getOppositeVariation.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\unit\getParentNode.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\unit\getScrollParent.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\unit\getStyleComputedProperty.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\unit\isFixed.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\unit\isNative.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\unit\parseOffset.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\utils\getRect.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\utils\makePopperFactory.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\visual\flipWithoutPreventOverflow.html" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\visual\test.html" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\tests\visual\tooltip.html" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\test-utils\setup.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\test-utils\utils\appendNewPopper.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\test-utils\utils\appendNewRef.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\test-utils\utils\customEventPolyfill.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\test-utils\utils\getRect.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\test-utils\utils\isMSBrowser.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\test-utils\utils\makeConnectedElement.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\test-utils\utils\makeConnectedScrollElement.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\test-utils\utils\makeElement.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\test-utils\utils\prepend.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\test-utils\utils\simulateScroll.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\test-utils\utils\then.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\test\.babelrc.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\test\bin\karma.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\test\karma.conf.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\tooltip\.eslintrc.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\tooltip\bundle.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\tooltip\src\index.js" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\tooltip\tests\functional\tooltip.js" />
     <Content Include="AdminTemplate\assets\vendor_components\popper\popperjs.png" />
     <Content Include="AdminTemplate\assets\vendor_components\raphael\dev\banner.txt" />
     <Content Include="AdminTemplate\assets\vendor_components\raphael\dev\raphael.amd.js" />
@@ -9130,7 +9012,6 @@
     <Content Include="AdminTemplate\assets\vendor_components\jquery-steps-master\.travis.yml" />
     <Content Include="AdminTemplate\assets\vendor_components\jquery-steps-master\bower.json" />
     <Content Include="AdminTemplate\assets\vendor_components\jquery-steps-master\build\jquery.steps-1.1.0.zip" />
-    <Content Include="AdminTemplate\assets\vendor_components\jquery-steps-master\build\jQuery.Steps.1.1.0.nupkg" />
     <Content Include="AdminTemplate\assets\vendor_components\jquery-steps-master\CHANGELOG.md" />
     <Content Include="AdminTemplate\assets\vendor_components\jquery-steps-master\nuget\jQuery.Steps.nuspec" />
     <Content Include="AdminTemplate\assets\vendor_components\jquery-steps-master\package.json" />
@@ -9288,18 +9169,6 @@
     <Content Include="AdminTemplate\assets\vendor_components\popper\CHANGELOG.md" />
     <Content Include="AdminTemplate\assets\vendor_components\popper\CODE_OF_CONDUCT.md" />
     <Content Include="AdminTemplate\assets\vendor_components\popper\CONTRIBUTING.md" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\esm\popper-utils.js.map" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\esm\popper-utils.min.js.map" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\esm\popper.js.map" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\esm\popper.min.js.map" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\popper-utils.js.map" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\popper-utils.min.js.map" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\popper.js.map" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\popper.min.js.map" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\umd\popper-utils.js.map" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\umd\popper-utils.min.js.map" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\umd\popper.js.map" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\dist\umd\popper.min.js.map" />
     <Content Include="AdminTemplate\assets\vendor_components\popper\docs\CNAME" />
     <Content Include="AdminTemplate\assets\vendor_components\popper\docs\css\ie8.scss" />
     <Content Include="AdminTemplate\assets\vendor_components\popper\docs\css\ie9.scss" />
@@ -9320,26 +9189,6 @@
     <Content Include="AdminTemplate\assets\vendor_components\popper\LICENSE.md" />
     <Content Include="AdminTemplate\assets\vendor_components\popper\MENTIONS.md" />
     <Content Include="AdminTemplate\assets\vendor_components\popper\package.json" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\babel-config\package.json" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\babel-config\yarn.lock" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\bundle\package.json" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\bundle\yarn.lock" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\eslint-config-popper\package.json" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\eslint-config-popper\yarn.lock" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\.eslintignore" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\.npmignore" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\bower-publish.sh" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\bower.json" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\popper\package.json" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\test-utils\package.json" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\test-utils\yarn.lock" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\test\package.json" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\test\README.md" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\tooltip\.eslintignore" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\tooltip\.npmignore" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\tooltip\package.json" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\tooltip\tests\.eslintrc" />
-    <Content Include="AdminTemplate\assets\vendor_components\popper\packages\tooltip\yarn.lock" />
     <Content Include="AdminTemplate\assets\vendor_components\popper\README.md" />
     <Content Include="AdminTemplate\assets\vendor_components\popper\yarn.lock" />
     <Content Include="AdminTemplate\assets\vendor_components\raphael\.bower.json" />
@@ -9511,6 +9360,7 @@
     <Content Include="AdminTemplate\main\css\iconfont\fonts\icomoon.eot" />
     <Content Include="AdminTemplate\main\css\iconfont\fonts\icomoon.ttf" />
     <Content Include="AdminTemplate\main\css\iconfont\fonts\icomoon.woff" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -9575,6 +9425,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminTemplate\assets\vendor_components\flat-color-icons\PNG\512\A\" />
+    <Folder Include="AdminTemplate\assets\vendor_components\popper\dist\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
@@ -9630,10 +9481,12 @@
     <EmbeddedResource Include="Migrations\201911081048044_DistrictModelNav.resx">
       <DependentUpon>201911081048044_DistrictModelNav.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911091129131_MemberModelRequired.resx">
+      <DependentUpon>201911091129131_MemberModelRequired.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="AdminTemplate\assets\vendor_components\moment\moment.d.ts" />
-    <TypeScriptCompile Include="AdminTemplate\assets\vendor_components\popper\packages\popper\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

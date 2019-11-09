@@ -75,7 +75,7 @@ namespace WinnersProject.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Create", "Members",new { message = "Member Added Successfully" });
             }
-            
+            ViewBag.Districts = db.Districts.ToList();
             return View(member);
         }
 

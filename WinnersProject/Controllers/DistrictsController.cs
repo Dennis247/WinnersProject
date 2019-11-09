@@ -18,7 +18,7 @@ namespace WinnersProject.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
 
-        public async Task<ActionResult> DistrictMembers(int id,string districtName,string date)
+        public  ActionResult DistrictMembers(int id,string districtName,string date)
         {
             var members = db.Members.Where(x => x.districtId == id).ToList(); 
             if (date != null)
